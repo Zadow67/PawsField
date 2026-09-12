@@ -6,7 +6,6 @@ extends NodeState
 func _on_process(_delta : float) -> void:
 	pass
 
-
 func _on_physics_process(_delta : float) -> void:
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("idle_back")
@@ -20,11 +19,18 @@ func _on_physics_process(_delta : float) -> void:
 		animated_sprite_2d.play("idle_front")
 	
 func _on_next_transitions() -> void:
-	
 	if GameInputEvent.movement_input():
 		transition.emit("Walk")
+		
+	if player.current_tool == Data_types.Tools.AxeWood && GameInputEvent.use_tool():
+		transition.emit("Chopping")
 
+	if player.current_tool == Data_types.Tools.TillGround && GameInputEvent.use_tool():
+		transition.emit("tilling")
 
+	if player.current_tool == Data_types.Tools.WaterCrops && GameInputEvent.use_tool():
+		transition.emit("Watering")
+		
 func _on_enter() -> void:
 	pass
 

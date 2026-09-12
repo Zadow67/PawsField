@@ -243,3 +243,4 @@ tile_set = SubResource("TileSet_xrivr")
 
 [node name="Player" parent="." unique_id=1735032803 instance=ExtResource("4_e46wm")]
 position = Vector2(281, 188)
+current_tool = 3
