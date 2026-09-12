@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://y83ibg5thn6k"]
 
 [ext_resource type="Texture2D" uid="uid://d0t54cly8y8fr" path="res://assets/characters/Charakter_Actions.png" id="1_0gt1b"]
+[ext_resource type="Script" uid="uid://u648fif7yaug" path="res://scenes/Characters/player/player.gd" id="1_hyqdm"]
 [ext_resource type="Texture2D" uid="uid://b8jv6biv5khvt" path="res://assets/characters/Charakter_Spritesheet.png" id="2_0b17j"]
 [ext_resource type="Script" uid="uid://cu542m38nwxes" path="res://scripts/state_machine/node_state_machine.gd" id="3_frvdw"]
 [ext_resource type="Script" uid="uid://dut8gf5yveyh8" path="res://scenes/Characters/player/idle_state.gd" id="4_jvsnv"]
+[ext_resource type="Script" uid="uid://6mm7il5n1ck5" path="res://scenes/Characters/player/walk_state.gd" id="5_jvsnv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frvdw"]
 atlas = ExtResource("1_0gt1b")
@@ -393,6 +395,7 @@ radius = 8.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1735032803]
 position = Vector2(8, 2)
+script = ExtResource("1_hyqdm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=663182992]
 position = Vector2(-9, -2)
@@ -410,5 +413,10 @@ initial_node_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=1305070599 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("4_jvsnv")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="walk" type="Node" parent="StateMachine" unique_id=1668193234 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("5_jvsnv")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
