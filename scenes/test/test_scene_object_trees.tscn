@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dt6hipiqatkun" path="res://scenes/objects/trees/small_tree.tscn" id="4_c4lcj"]
 [ext_resource type="PackedScene" uid="uid://j2aoatxdwjx6" path="res://scenes/objects/trees/large_tree.tscn" id="5_fhliw"]
 [ext_resource type="PackedScene" uid="uid://y83ibg5thn6k" path="res://scenes/Characters/player/player.tscn" id="5_hxrmh"]
-[ext_resource type="PackedScene" uid="uid://dw1w0wc3x6rfb" path="res://scenes/houses/large_house.tscn" id="6_hxrmh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g1wi"]
 texture = ExtResource("2_7b5dd")
@@ -261,5 +260,6 @@ tile_set = SubResource("TileSet_b1lj4")
 [node name="Player" parent="." unique_id=1735032803 instance=ExtResource("5_hxrmh")]
 position = Vector2(183, 165)
 
-[node name="LargeHouse" parent="." unique_id=1694048073 instance=ExtResource("6_hxrmh")]
-position = Vector2(277, 221)
+[node name="House" type="TileMapLayer" parent="." unique_id=1459513644]
+tile_map_data = PackedByteArray("AAAQAA0AAQAAAAAAAwA=")
+tile_set = ExtResource("1_6mhvp")
