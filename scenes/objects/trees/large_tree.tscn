@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://j2aoatxdwjx6"]
+
+[ext_resource type="Shader" uid="uid://diqrpfegefpix" path="res://scenes/objects/trees/tree_shake.gdshader" id="1_f4wgc"]
+[ext_resource type="Texture2D" uid="uid://ckwj0mnea481e" path="res://assets/objects/Basic_Grass_Biom_things.png" id="1_ivetc"]
+[ext_resource type="Script" uid="uid://b7mhdoeqv0xs6" path="res://scenes/objects/trees/large_tree.gd" id="2_wjqkr"]
+[ext_resource type="PackedScene" uid="uid://dt1whal1nuylp" path="res://scenes/components/hurt_component.tscn" id="3_f4wgc"]
+[ext_resource type="PackedScene" uid="uid://c118k4k1xy0kf" path="res://scenes/components/damage_component.tscn" id="3_ivetc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w057i"]
+resource_local_to_scene = true
+shader = ExtResource("1_f4wgc")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrivr"]
+atlas = ExtResource("1_ivetc")
+region = Rect2(16, 0, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_13qdw"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(12, 27)
+
+[node name="LargeTree" type="Sprite2D" unique_id=1866319823]
+material = SubResource("ShaderMaterial_w057i")
+position = Vector2(0, -13)
+texture = SubResource("AtlasTexture_xrivr")
+script = ExtResource("2_wjqkr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=849374973]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2033674230]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_13qdw")
+
+[node name="HurtComponent" parent="." unique_id=493385955 instance=ExtResource("3_f4wgc")]
+tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=85819020]
+shape = SubResource("RectangleShape2D_xrivr")
+debug_color = Color(0.94696134, 0.14049351, 0.46693498, 0.41960785)
+
+[node name="DamageComponent" parent="." unique_id=2127390666 instance=ExtResource("3_ivetc")]
+max_damage = 5

@@ -1,6 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://f5415ospmdj0"]
 
 [ext_resource type="Texture2D" uid="uid://bso1mrb1mq174" path="res://assets/tilesets/Water.png" id="1_tjtrf"]
+[ext_resource type="PackedScene" uid="uid://c4t1iqs8qqd1u" path="res://scenes/objects/rocks/rock.tscn" id="2_tkbyn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkbyn"]
 texture = ExtResource("1_tjtrf")
@@ -12,5 +13,9 @@ texture = ExtResource("1_tjtrf")
 0:0/animation_frame_3/duration = 0.2
 0:0/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_v1amf"]
+scenes/1/scene = ExtResource("2_tkbyn")
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_tkbyn")
+sources/1 = SubResource("TileSetScenesCollectionSource_v1amf")
