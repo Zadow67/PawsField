@@ -406,15 +406,15 @@ y_sort_enabled = true
 position = Vector2(12, -6)
 collision_layer = 2
 script = ExtResource("1_hyqdm")
-current_tool = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=663182992]
-position = Vector2(-10, -1)
+position = Vector2(-10, 4)
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"chopping_front"
 autoplay = "idle_front"
 frame = 1
 frame_progress = 1.0
+offset = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313043866]
 position = Vector2(-10, 3)
@@ -445,14 +445,14 @@ script = ExtResource("8_wcfqd")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Watering" type="Node" parent="StateMachine" unique_id=443599901 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Watering" type="Node" parent="StateMachine" unique_id=443599901 node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
 script = ExtResource("9_pkydc")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
 [node name="HitComponent" parent="." unique_id=1499468322 instance=ExtResource("10_j4loj")]
 position = Vector2(-14, 6)
-current_tool = 1
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=1078766976]
 position = Vector2(1, 3)

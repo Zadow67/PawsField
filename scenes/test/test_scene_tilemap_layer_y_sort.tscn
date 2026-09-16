@@ -1,9 +1,12 @@
 [gd_scene format=4 uid="uid://3j8dpxyl11ox"]
 
+[ext_resource type="PackedScene" uid="uid://cg4qybjaasftm" path="res://scenes/ui/game_screen.tscn" id="1_64nhu"]
 [ext_resource type="TileSet" uid="uid://f5415ospmdj0" path="res://tilesets/game_tile_set.tres" id="1_vkqnv"]
 [ext_resource type="Texture2D" uid="uid://dmewii6shw5x6" path="res://assets/tilesets/Grass.png" id="2_n85s2"]
 [ext_resource type="Texture2D" uid="uid://cypvgbb8i20c6" path="res://assets/objects/Egg_item.png" id="3_64nhu"]
 [ext_resource type="PackedScene" uid="uid://y83ibg5thn6k" path="res://scenes/Characters/player/player.tscn" id="4_tq3fl"]
+[ext_resource type="PackedScene" uid="uid://cflbget2ubkq5" path="res://scenes/objects/plants/corn.tscn" id="5_n85s2"]
+[ext_resource type="PackedScene" uid="uid://bn7k1ommhgjl5" path="res://scenes/objects/plants/tomato.tscn" id="6_64nhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mdqj"]
 texture = ExtResource("2_n85s2")
@@ -232,6 +235,8 @@ sources/1 = SubResource("TileSetAtlasSource_vkqnv")
 y_sort_enabled = true
 position = Vector2(-1, 0)
 
+[node name="GameScreen" parent="." unique_id=1906597327 instance=ExtResource("1_64nhu")]
+
 [node name="GameTileMap" type="Node2D" parent="." unique_id=1261988965]
 y_sort_enabled = true
 
@@ -259,6 +264,21 @@ tile_set = ExtResource("1_vkqnv")
 
 [node name="UnderGrowth" type="TileMapLayer" parent="GameTileMap" unique_id=324941322]
 tile_set = ExtResource("1_vkqnv")
+
+[node name="Crops" type="Node2D" parent="." unique_id=2012721046]
+y_sort_enabled = true
+
+[node name="Corn" parent="Crops" unique_id=429824454 instance=ExtResource("5_n85s2")]
+position = Vector2(323, 165)
+
+[node name="Corn2" parent="Crops" unique_id=2122899168 instance=ExtResource("5_n85s2")]
+position = Vector2(343, 166)
+
+[node name="Tomato" parent="Crops" unique_id=294014367 instance=ExtResource("6_64nhu")]
+position = Vector2(323, 178)
+
+[node name="Tomato2" parent="Crops" unique_id=573907350 instance=ExtResource("6_64nhu")]
+position = Vector2(342, 178)
 
 [node name="Player" parent="." unique_id=1735032803 instance=ExtResource("4_tq3fl")]
 z_index = 0

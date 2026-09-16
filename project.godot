@@ -13,6 +13,12 @@ config_version=5
 config/name="Pawsfield"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[autoload]
+
+ToolManager="*uid://bf3x46elyq4w8"
+InventoryManager="*uid://chj4q0arit4jv"
+DayAndNightCycleManager="*uid://cy351uhqivo10"
+
 [display]
 
 window/size/viewport_width=640
@@ -24,6 +30,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
 
+[editor_plugins]
+
+enabled=PackedStringArray()
+
 [file_customization]
 
 folder_colors={
@@ -32,6 +42,10 @@ folder_colors={
 "res://scripts/": "red",
 "res://tilesets/": "yellow"
 }
+
+[global_group]
+
+navigation_polygon_source_geometry_group=""
 
 [input]
 
@@ -70,10 +84,12 @@ hit={
 2d_physics/layer_1="ground"
 2d_navigation/layer_1="chicken_nav"
 2d_physics/layer_2="Player"
+2d_navigation/layer_2="cow_nav"
 2d_physics/layer_3="Interactable"
 2d_physics/layer_4="tools"
 2d_physics/layer_5="Objects"
 2d_physics/layer_6="Collectable"
+2d_physics/layer_7="NPC"
 
 [physics]
 
