@@ -440,7 +440,7 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
-[node name="Tilling" type="Node" parent="StateMachine" unique_id=517768980 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Tilling" type="Node" parent="StateMachine" unique_id=517768980 node_paths=PackedStringArray("player", "animated_sprite_2d") groups=["player"]]
 script = ExtResource("8_wcfqd")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
