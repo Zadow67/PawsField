@@ -18,6 +18,9 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 ToolManager="*uid://bf3x46elyq4w8"
 InventoryManager="*uid://chj4q0arit4jv"
 DayAndNightCycleManager="*uid://cy351uhqivo10"
+SaveGameManager="*uid://ce00bb0dhvpv3"
+DialogueManager="*uid://c3rodes2l3gxb"
+GameDialogueManager="*uid://4lw87t08bcny"
 
 [display]
 
@@ -32,12 +35,14 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
+"res://Resources/": "purple",
 "res://assets/": "orange",
+"res://dialogue/": "teal",
 "res://scenes/": "green",
 "res://scripts/": "red",
 "res://tilesets/": "yellow"
@@ -84,6 +89,20 @@ remove_dirt={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"button_mask":1,"position":Vector2(360, 10),"global_position":Vector2(374, 83),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+save_game={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
+]
+}
+Show_dialogue={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/guide.dialogue", "res://dialogue/conversations/chest.dialogue")
 
 [layer_names]
 
@@ -96,6 +115,7 @@ remove_dirt={
 2d_physics/layer_5="Objects"
 2d_physics/layer_6="Collectable"
 2d_physics/layer_7="NPC"
+2d_physics/layer_8="Food"
 
 [physics]
 

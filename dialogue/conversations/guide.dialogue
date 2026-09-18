@@ -1,0 +1,14 @@
+~ start
+
+Zadow: [[Hi|Hello|HackCluber]], nice to meet you.
+Zadow: Welcome to your new farm.
+Zadow: As you can see the cows and chickens are hungry.
+Zadow: You need to grow some crops to feed them.
+Zadow: Here are some seeds to grow some crops.
+- Take crop seeds
+	Nemo (Cat): Yeah i can grow crops.
+	do GameDialogueManager.action_give_crop_seeds()
+- No, I don't want them.
+	Nemo (cat): I'm not ready to grow my farm yet.
+
+=> END

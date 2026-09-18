@@ -247,7 +247,7 @@ tile_set = ExtResource("1_vkqnv")
 
 [node name="objects" type="TileMapLayer" parent="GameTileMap" unique_id=821308524]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAJAAgAAQAAAAAABgAMAAkAAQAAAAAABgAMAAcAAQAAAAAABQAKAAYAAQAAAAAABQAMAAQAAQAAAAAABgAIAAYAAQAAAAAABgA=")
+tile_map_data = PackedByteArray("AAAJAAgAAQAAAAAABgAMAAkAAQAAAAAABgAMAAcAAQAAAAAABQAKAAYAAQAAAAAABQAMAAQAAQAAAAAABgAIAAYAAQAAAAAABgALAAwAAwAFAAAAAAAMAAwAAwAFAAAAAAANAAwAAwAFAAAAAAAOAAwAAwAIAAIAAAAKAAwAAwADAAAAAAA=")
 tile_set = ExtResource("1_vkqnv")
 
 [node name="Gass" type="TileMapLayer" parent="GameTileMap" unique_id=1749154766]

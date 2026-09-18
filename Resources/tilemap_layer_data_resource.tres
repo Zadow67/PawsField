@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://c5ae55qialqiu"]
+
+[ext_resource type="Script" uid="uid://b4logbl3xex64" path="res://Resources/tilemap_layer_data_resource.gd" id="1_nk5aa"]
+
+[resource]
+script = ExtResource("1_nk5aa")
