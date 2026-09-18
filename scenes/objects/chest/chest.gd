@@ -58,32 +58,52 @@ func on_feed_the_animals() -> void:
 		trigger_feed_harvest("corn", corn_harvest_scene)
 		trigger_feed_harvest("tomato", tomato_harvest_scene)
 
-func trigger_feed_harvest(inventory_item: String, scene: Resource) -> void:
+func trigger_feed_harvest(inventory_item: String, scene: PackedScene) -> void:
 	var inventory: Dictionary = InventoryManager.inventory
 	
 	if !inventory.has(inventory_item):
 		return
 	
-	var inventroy_item_count = inventory[inventory_item]
+	var inventory_item_count = inventory[inventory_item]
 	
-	for index in inventroy_item_count:
+	if inventory_item_count <= 0:
+		return
+	
+	for index in inventory_item_count:
+		InventoryManager.remove_collectable(inventory_item)
+		
 		var harvest_instance = scene.instantiate() as Node2D
 		harvest_instance.global_position = Vector2(global_position.x, global_position.y - food_drop_height)
 		get_tree().root.add_child(harvest_instance)
+		
 		var target_position = global_position
 		
 		var time_delay = randf_range(0.5, 2.0)
 		await get_tree().create_timer(time_delay).timeout
 		
-		var tween = get_tree().create_tween()
-		tween.tween_property(harvest_instance, "position", target_position, 1.0)
-		tween.tween_property(harvest_instance, "scale", Vector2(0.5,0.5), 1.0)
-		tween.tween_callback(harvest_instance.queue_free)
-
-		InventoryManager.remove_collectable(inventory_item)
-
+		if is_instance_valid(harvest_instance):
+			var tween = get_tree().create_tween()
+			tween.tween_property(harvest_instance, "position", target_position, 1.0)
+			tween.tween_property(harvest_instance, "scale", Vector2(0.5, 0.5), 1.0)
+			tween.tween_callback(harvest_instance.queue_free)
+	
 func on_food_received(area: Area2D) -> void:
-	pass
+	call_deferred("add_reward_scene")
 	
 
-func add_reward_scene() -> void;
+func add_reward_scene() -> void:
+	for scene in output_reward_scenes:
+		var reward_scene: Node2D = scene.instantiate()
+		var reward_position: Vector2 = get_random_position_in_circle(reward_marker.global_position, reward_output_radius)
+		reward_scene.global_position = reward_position
+		get_tree().root.add_child(reward_scene)
+
+
+func get_random_position_in_circle(center: Vector2, radius: int) -> Vector2i:
+	var angle = randf() * TAU
+	var distance_from_center = sqrt(randf()) * radius
+	
+	var x: int = center.x + distance_from_center * cos(angle)
+	var y: int = center.y + distance_from_center * sin(angle)
+	
+	return Vector2i(x, y)

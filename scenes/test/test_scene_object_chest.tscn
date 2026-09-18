@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cypvgbb8i20c6" path="res://assets/objects/Egg_item.png" id="3_f0k35"]
 [ext_resource type="PackedScene" uid="uid://y83ibg5thn6k" path="res://scenes/Characters/player/player.tscn" id="4_mmawu"]
 [ext_resource type="PackedScene" uid="uid://cg4qybjaasftm" path="res://scenes/ui/game_screen.tscn" id="5_cwxfs"]
+[ext_resource type="PackedScene" uid="uid://gd1b0c6o4ctk" path="res://scenes/objects/egg.tscn" id="5_w6m3w"]
 [ext_resource type="PackedScene" uid="uid://3lr252wnoqpa" path="res://scenes/objects/chest/chest.tscn" id="6_ccdwq"]
+[ext_resource type="PackedScene" uid="uid://dypxyna2ty6i1" path="res://scenes/objects/milk.tscn" id="8_k3htq"]
 [ext_resource type="PackedScene" uid="uid://k8mdc63up0ny" path="res://scenes/objects/plants/corn_harvest.tscn" id="9_1vsar"]
 [ext_resource type="PackedScene" uid="uid://d030slg4fk4ql" path="res://scenes/objects/plants/tomato_harvest.tscn" id="10_jm67m"]
 
@@ -277,10 +279,12 @@ position = Vector2(317, 176)
 [node name="CowPastureBox" parent="." unique_id=1829281618 instance=ExtResource("6_ccdwq")]
 position = Vector2(249, 162)
 dialogue_start_command = "start_cow_pasture_box"
+output_reward_scenes = Array[PackedScene]([ExtResource("8_k3htq")])
 
 [node name="ChickenPastureBox" parent="." unique_id=2056454505 instance=ExtResource("6_ccdwq")]
 position = Vector2(251, 239)
 dialogue_start_command = "start_chicken_pasture_box"
+output_reward_scenes = Array[PackedScene]([ExtResource("5_w6m3w")])
 
 [node name="Player" parent="." unique_id=1735032803 instance=ExtResource("4_mmawu")]
 position = Vector2(226, 196)
