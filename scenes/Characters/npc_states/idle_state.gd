@@ -40,4 +40,3 @@ func _on_exit() -> void:
 
 func on_idle_state_timout():
 	idle_state_timeout = true
-	pass

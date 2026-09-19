@@ -277,4 +277,25 @@ position = Vector2(-3, -18)
 navigation_polygon = SubResource("NavigationPolygon_qibpl")
 
 [node name="Chicken" parent="Chickens" unique_id=949438015 instance=ExtResource("5_gk5ja")]
-position = Vector2(157, 37)
+position = Vector2(165, 34)
+
+[node name="Chicken2" parent="Chickens" unique_id=1924576791 instance=ExtResource("5_gk5ja")]
+position = Vector2(138, 43)
+
+[node name="Chicken3" parent="Chickens" unique_id=270647253 instance=ExtResource("5_gk5ja")]
+position = Vector2(196, 52)
+
+[node name="Chicken4" parent="Chickens" unique_id=531507086 instance=ExtResource("5_gk5ja")]
+position = Vector2(170, 75)
+
+[node name="Chicken5" parent="Chickens" unique_id=824707705 instance=ExtResource("5_gk5ja")]
+position = Vector2(123, 30)
+
+[node name="Chicken6" parent="Chickens" unique_id=1001747093 instance=ExtResource("5_gk5ja")]
+position = Vector2(194, 22)
+
+[node name="Chicken7" parent="Chickens" unique_id=672223317 instance=ExtResource("5_gk5ja")]
+position = Vector2(157, 1)
+
+[node name="Chicken8" parent="Chickens" unique_id=998280998 instance=ExtResource("5_gk5ja")]
+position = Vector2(105, 8)

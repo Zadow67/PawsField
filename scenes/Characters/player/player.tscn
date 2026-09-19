@@ -401,7 +401,6 @@ radius = 5.0
 radius = 3.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1735032803]
-z_index = 1
 y_sort_enabled = true
 position = Vector2(12, -6)
 collision_layer = 2
