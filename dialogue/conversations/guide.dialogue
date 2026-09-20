@@ -1,14 +1,65 @@
+#~ start
+#
+#Zadow: [[Hi|Hello|HackCluber]], nice to meet you.
+#Zadow: Welcome to your new farm.
+#Zadow: As you can see the cows and chickens are hungry.
+#Zadow: You need to grow some crops to feed them.
+#Zadow: Here are some seeds to grow some crops.
+#- Take crop seeds
+#	Nemo (Cat): Yeah i can grow crops.
+#	do GameDialogueManager.action_give_crop_seeds()
+#- No, I don't want them.
+#	Nemo (cat): I'm not ready to grow my farm yet.
+#
+#=> END
+
 ~ start
 
-Zadow: [[Hi|Hello|HackCluber]], nice to meet you.
+Zadow: [[Hi|Hello|HackCluber]], nice to meet you!
 Zadow: Welcome to your new farm.
-Zadow: As you can see the cows and chickens are hungry.
-Zadow: You need to grow some crops to feed them.
-Zadow: Here are some seeds to grow some crops.
+Zadow: It might look a little messy right now, but you'll get it cleaned up in no time.
+
+- Need Tutorial?
+	Zadow: Of course! Let me show you around.
+	Zadow: You can use your axe to chop trees and break rocks around the farm.
+	Zadow: You can also use your hoe to prepare the land and grow crops.
+
+- Nah, I'm good.
+	Zadow: Alright! You can always ask me later if you need help.
+
+Zadow: Before you get started, do you want to know the controls?
+
+- Yeah, show me the controls.
+	Zadow: Sure! Here's a quick overview.
+	Zadow: Save Game: You can save your progress from the game menu or by clicking P.
+	Zadow: Tools: Use the Axe tool to cut down trees and mine rocks.
+	Zadow: Right click to deselect your current tool.
+	Zadow: Crops: Use the hoe to prepare the soil, then plant your seeds.
+	Zadow: Make sure you water your crops so they can grow.
+	Zadow: Day Counter: Keep an eye on the day counter to see which day you're on.
+	Zadow: Time Speed: You can change the time speed if you want to make the days go faster.
+	Zadow: Faster time can help you test crop growth without waiting as long.
+	Zadow: Toolbar & Inventory: You can pick up items around the farm and find them in your inventory.
+	Zadow: That's everything you need to know for now!
+
+- Nah, I know the controls.
+	Zadow: Alright, let's get started!
+
+Zadow: Take a look around.
+Zadow: As you can see, the cows and chickens are hungry.
+Zadow: You'll need to grow some crops to keep them fed.
+Zadow: First, you'll need to plant some seeds.
+Zadow: Here, take these. You can use them to start growing your first crops.
+
 - Take crop seeds
-	Nemo (Cat): Yeah i can grow crops.
+	Nemo (Cat): Yeah, I can grow some crops!
 	do GameDialogueManager.action_give_crop_seeds()
+	Zadow: Great! Use the hoe to plant them in some tilled soil and make sure you water them.
+	Zadow: Once they've grown, you can harvest them and use them to feed the animals.
+
 - No, I don't want them.
-	Nemo (cat): I'm not ready to grow my farm yet.
+	Nemo (Cat): I'm not ready to grow my farm yet.
+	Zadow: That's alright. Take your time.
+	Zadow: Come talk to me again when you're ready.
 
 => END
